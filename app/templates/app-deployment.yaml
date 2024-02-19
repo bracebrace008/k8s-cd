@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: { { .Values.appName } }
-  namespace: { { .Values.namespace } }
+  name: {{ .Values.appName }}
+  namespace: {{ .Values.namespace }}
   labels:
-    app: { { .Values.appName } }
+    app: {{ .Values.appName }}
 spec:
   selector:
     matchLabels:
-      app: { { .Values.appName } }
+      app: {{ .Values.appName }}
   template:
     metadata:
       labels:
-        app: { { .Values.appName } }
+        app: {{ .Values.appName }}
     spec:
       tolerations:
         - key: pool-prod
           operator: Exists
           effect: NoSchedule
       containers:
-        - name: { { .Values.appName } }
+        - name: {{ .Values.appName }}
           # image: $DOCKER_NAMESPACE/{{ .Values.appName }}:$BUILD_TIME
           image: bracebrace008/fancytube-h5-frontend:2024-02-16-20-10
           ports:
