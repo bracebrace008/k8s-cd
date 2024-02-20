@@ -21,6 +21,6 @@ spec:
       containers:
         - name: "{{ .Values.appName }}"
           # image: $DOCKER_NAMESPACE/"{{ .Values.appName }}":$BUILD_TIME
-          image: bracebrace008/fancytube-h5-frontend:2024-02-16-20-10
+          image: bracebrace008/fancytube-h5-frontend:{{.Values.tag}}
           ports:
             - containerPort: 3000
