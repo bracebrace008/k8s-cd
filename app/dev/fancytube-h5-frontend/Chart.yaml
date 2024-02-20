@@ -11,4 +11,4 @@ appVersion: "1.0"
 dependencies:
   - name: common-chart
     version: 0.1.0
-    repository: file://../../common-chart
+    repository: https://bracebrace008.github.io/k8s-cd/app/common-chart/
