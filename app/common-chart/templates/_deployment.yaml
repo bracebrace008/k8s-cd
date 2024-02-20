@@ -1,4 +1,4 @@
-{{- define "common-chart.deployment.tpl" -}}
+{{- define "common-chart.deployment" -}}
 apiVersion: apps/v1
 kind: Deployment
 metadata:

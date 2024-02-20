@@ -1,4 +1,4 @@
-{{- define "common-chart.service.tpl" -}}
+{{- define "common-chart.service" -}}
 apiVersion: v1
 kind: Service
 metadata:
