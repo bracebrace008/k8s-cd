@@ -1,0 +1,9 @@
+apiVersion: v2
+name: common-chart
+description: A common chart for app with service and delployment
+
+type: library
+
+version: 0.1.0
+
+appVersion: "1.0.0"
