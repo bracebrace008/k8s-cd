@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  common-chart:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-02-20T17:16:50.117528+08:00"
+    description: A common chart for app with service and delployment
+    digest: ec7546a0c015dbc27b03429038228ca3ff8598da92fce22a5ffadcbdd7194ae4
+    name: common-chart
+    type: library
+    urls:
+    - https://bracebrace008.github.io/k8s-cd/app/common-chart/common-chart-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-02-20T17:16:50.117245+08:00"
