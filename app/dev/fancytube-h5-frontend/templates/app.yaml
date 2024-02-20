@@ -1,0 +1,3 @@
+{{- include "common-chart.app-deployment" . }}
+---
+{{- include "common-chart.app-src" . }}
