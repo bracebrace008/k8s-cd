@@ -6,6 +6,7 @@ metadata:
   name: {{ .Values.appName }}-svc
   namespace: {{ .Values.namespace }}
 spec:
+  type: NodePort
   ports:
     - port: 3000
       targetPort: 3000
