@@ -1,14 +1,22 @@
-project: default
-source:
-  repoURL: 'https://github.com/bracebrace008/k8s-cd'
-  path: app/dev/fancytube-h5-frontend
-  targetRevision: main
-  helm:
-    valueFiles:
-      - values.yaml
-destination:
-  server: 'https://kubernetes.default.svc'
-  namespace: fancytube-h5-frontend
-syncPolicy:
-  automated:
-    prune: true
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: fancytube-h5-frontend
+spec:
+  destination:
+    name: ''
+    namespace: fancytube-h5-frontend
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: app/dev/fancytube-h5-frontend
+    repoURL: 'https://github.com/bracebrace008/k8s-cd'
+    targetRevision: main
+    helm:
+      valueFiles:
+        - values.yaml
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false
