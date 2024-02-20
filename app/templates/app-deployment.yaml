@@ -24,4 +24,3 @@ spec:
           image: "bracebrace008/fancytube-h5-frontend:{{ .Values.tag }}"
           ports:
             - containerPort: 3000
-      externalTrafficPolicy: Local      
