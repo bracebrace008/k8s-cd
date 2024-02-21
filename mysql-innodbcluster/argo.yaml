@@ -4,15 +4,18 @@ metadata:
   name: mysql-innerdbcluster
 spec:
   destination:
-    name: ""
+    name: ''
     namespace: mysql-innerdb
-    server: "https://kubernetes.default.svc"
+    server: 'https://kubernetes.default.svc'
   source:
     path: mysql-innodbcluster
-    repoURL: "https://github.com/bracebrace008/k8s-cd"
+    repoURL: 'https://github.com/bracebrace008/k8s-cd'
     targetRevision: main
     helm:
       valueFiles:
         - values.yaml
   sources: []
   project: default
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
