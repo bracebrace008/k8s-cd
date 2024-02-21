@@ -1,11 +1,8 @@
-storageClassName: openebs-hostpath
-
 image:
   pullPolicy: IfNotPresent
   pullSecrets:
     enabled: false
     secretName:
-
 
 credentials:
   root:
@@ -84,7 +81,6 @@ baseServerId: 1000
 #      sink:
 ##       rawConfig:
 
-
 #keyring:
 #  file:
 #    fileName:
@@ -109,8 +105,6 @@ baseServerId: 1000
 #      management: "<identifier>-management.kms.<region>.oraclecloud.com"
 #      vaults: "vaults.<region>.oci.oraclecloud.com"
 #      secrets: "secrets.vaults.<region>.oci.oraclecloud.com"
-      
-    
 
 #podSpec:
 #  containers:
@@ -132,8 +126,8 @@ baseServerId: 1000
 #    core_file
 #    local_infile=off
 
-
-#datadirVolumeClaimTemplate:
+datadirVolumeClaimTemplate:
+   storageClassName: openebs-hostpath
 #  accessModes:
 #  resources:
 #    requests:
@@ -164,7 +158,6 @@ baseServerId: 1000
 #    donorUrl:
 #    rootUser:
 #    credentials:
-
 
 #backupProfiles:
 #- name: dump-instance-profile-pvc
@@ -223,7 +216,6 @@ baseServerId: 1000
 #          prefix : /
 #          bucketName: idbcluster_backup
 #          credentials: oci-credentials
-
 
 # If you would like to debug the Helm output with `helm template`, you need
 # to turn disableLookups on as during `helm template` Helm won't contact the kube API
