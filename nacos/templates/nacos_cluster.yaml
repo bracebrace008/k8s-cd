@@ -1,0 +1,23 @@
+apiVersion: nacos.io/v1alpha1
+kind: Nacos
+metadata:
+  name: nacos
+spec:
+  # standalone/cluster
+  type: cluster
+  image: nacos/nacos-server:latest
+  replicas: 2
+  database:
+    type: embedded
+  resources:
+    requests:
+      cpu: 100m
+      memory: 512Mi
+    limits:
+      cpu: 2
+      memory: 2Gi
+  volume:
+    enabled: true
+    requests:
+      storage: 1Gi
+    storageClass: openebs-hostpath
