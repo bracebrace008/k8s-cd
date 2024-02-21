@@ -5,7 +5,7 @@ metadata:
 spec:
   destination:
     name: ''
-    namespace: mysql-innerdb
+    namespace: mysql-db
     server: 'https://kubernetes.default.svc'
   source:
     path: mysql-innodbcluster
