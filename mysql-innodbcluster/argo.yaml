@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mysql-innerdbcluster
+spec:
+  destination:
+    name: ""
+    namespace: mysql-innerdb
+    server: "https://kubernetes.default.svc"
+  source:
+    path: app/mysql-innodbcluster
+    repoURL: "https://github.com/bracebrace008/k8s-cd"
+    targetRevision: main
+    helm:
+      valueFiles:
+        - values.yaml
+  sources: []
+  project: default
