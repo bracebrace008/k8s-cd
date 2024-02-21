@@ -1,3 +1,5 @@
+storageClassName: openebs-hostpath
+
 image:
   pullPolicy: IfNotPresent
   pullSecrets:
