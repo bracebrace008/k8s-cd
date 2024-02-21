@@ -127,11 +127,12 @@ baseServerId: 1000
 #    local_infile=off
 
 datadirVolumeClaimTemplate:
-   storageClassName: openebs-hostpath
-#  accessModes:
-#  resources:
-#    requests:
-#      storage:
+  storageClassName: openebs-hostpath
+  accessModes:
+   - ReadWriteOnce
+  resources:
+      requests:
+        storage: 1Gi
 
 #initDB:
 #  dump:
