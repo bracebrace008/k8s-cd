@@ -132,7 +132,7 @@ datadirVolumeClaimTemplate:
    - ReadWriteOnce
   resources:
       requests:
-        storage: 1Gi
+        storage: 40Gi
 
 #initDB:
 #  dump:
