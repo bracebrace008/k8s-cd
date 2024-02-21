@@ -8,7 +8,7 @@ spec:
     namespace: mysql-innerdb
     server: "https://kubernetes.default.svc"
   source:
-    path: app/mysql-innodbcluster
+    path: mysql-innodbcluster
     repoURL: "https://github.com/bracebrace008/k8s-cd"
     targetRevision: main
     helm:
