@@ -128,8 +128,7 @@ baseServerId: 1000
 
 datadirVolumeClaimTemplate:
   storageClassName: openebs-hostpath
-  accessModes:
-    - "ReadWriteOnce"
+  accessModes: ReadWriteOnce
   resources:
     requests:
       storage: 20Gi
