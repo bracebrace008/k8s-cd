@@ -437,9 +437,7 @@ spec:
         {{- end}}
         {{- if .accessModes }}
       accessModes: 
-        {{- range .accessModes }}
-        - {{ . | quote }}
-        {{- end }}
+         - {{ .accessModes | quote }}
         {{- end }}
         {{- if .resources.requests.storage }}
       resources:
