@@ -106,7 +106,8 @@ spec:
     storageClassName: {{ .storageClassName | quote }}
     {{- end}}
     {{- if .accessModes }}
-    accessModes: [ "{{ .accessModes }}" ]
+    accessModes:
+      - {{ .accessModes | quote }}
     {{- end }}
     {{- if .resources.requests.storage }}
     resources:
