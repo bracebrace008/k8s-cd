@@ -3,7 +3,7 @@ kind: Application
 metadata:
   name: mysql-operator
 spec:
-  destination:
+    destination: ''
     name: ''
     namespace: mysql-operator
     server: 'https://kubernetes.default.svc'
