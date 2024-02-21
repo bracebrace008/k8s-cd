@@ -9,7 +9,7 @@ spec:
     count: 1
     volumeClaimTemplates:
     - metadata:
-        name: elasticsearch-data
+        name: elastic-data
       spec:
         accessModes:
         - ReadWriteOnce
