@@ -1,0 +1,13 @@
+apiVersion: kibana.k8s.elastic.co/v1
+kind: Kibana
+metadata:
+  name: {{ .Values.kibanaInstanceName }}
+spec:
+  version: {{ .Chart.AppVersion }}
+  count: 1
+  elasticsearchRef:
+    name: {{ .Values.ealsticInstanceName }}
+  http:
+    tls:
+      selfSignedCertificate:
+        disabled: true    

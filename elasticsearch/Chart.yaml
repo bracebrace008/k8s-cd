@@ -1,0 +1,6 @@
+apiVersion: v2
+appVersion: 7.17.14
+description: es deploy chart
+name: elasticsearch
+type: application
+version: 0.1.0
