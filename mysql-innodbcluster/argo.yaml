@@ -1,11 +1,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: mysql-innerdbcluster
+  name: mysql-db
 spec:
   destination:
     name: ''
-    namespace: mysql-db
+    namespace: mysql-innerdbcluster
     server: 'https://kubernetes.default.svc'
   source:
     path: mysql-innodbcluster
