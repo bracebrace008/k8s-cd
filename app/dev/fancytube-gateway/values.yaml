@@ -1,3 +1,3 @@
-appName: fancytube-h5-frontend
-namespace: fancytube-dev-frontend
+appName: fancytube-gateway
+namespace: fancytube-dev
 tag: 2024-02-22-20-22
