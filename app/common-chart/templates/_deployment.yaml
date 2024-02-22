@@ -21,8 +21,7 @@ spec:
           effect: NoSchedule
       containers:
         - name: "{{ .Values.appName }}"
-          # image: $DOCKER_NAMESPACE/"{{ .Values.appName }}":$BUILD_TIME
-          image: "bracebrace008/fancytube-h5-frontend:{{ .Values.tag }}"
+          image: "bracebrace008/{{ .Values.appName }}:{{ .Values.tag }}"
           ports:
             - containerPort: 3000
 {{- end -}}
