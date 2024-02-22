@@ -8,8 +8,8 @@ metadata:
   namespace: {{ .Values.namespace }}
 spec:
   ports:
-    - port: 3000
-      targetPort: 3000      
+    - port: {{ .Values.appPort }}
+      targetPort: {{ .Values.appPort }}    
   selector:
     app: {{ .Values.appName }}
 {{- end -}}    

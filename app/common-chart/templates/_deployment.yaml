@@ -23,5 +23,5 @@ spec:
         - name: "{{ .Values.appName }}"
           image: "bracebrace008/{{ .Values.appName }}:{{ .Values.tag }}"
           ports:
-            - containerPort: 3000
+            - containerPort: {{ .Values.appPort }}
 {{- end -}}
