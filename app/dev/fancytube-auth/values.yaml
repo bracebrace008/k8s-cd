@@ -1,0 +1,4 @@
+appName: fancytube-auth
+namespace: fancytube-dev
+appPort: 8208
+tag: 2024-02-22-09-43-40
