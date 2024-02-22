@@ -19,7 +19,7 @@ global:
   ##   - myRegistryKeySecretName
   ##
   imagePullSecrets: []
-  storageClass: ""
+  storageClass: "openebs-hostpath"
   redis:
     password: "redis"
 ## @section Redis&reg; Cluster Common parameters
