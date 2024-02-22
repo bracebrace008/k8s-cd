@@ -17,7 +17,7 @@ tls:
 #  routerCertAndPKsecretName: # our use router.certAndPKsecretName
 
 #serverVersion: 8.0.31
-serverInstances: 3
+serverInstances: 2
 routerInstances: 1 # or use router.instances
 baseServerId: 1000
 
@@ -131,7 +131,7 @@ datadirVolumeClaimTemplate:
   accessModes: ReadWriteOnce
   resources:
     requests:
-      storage: 20Gi
+      storage: 15Gi
 
 #initDB:
 #  dump:
