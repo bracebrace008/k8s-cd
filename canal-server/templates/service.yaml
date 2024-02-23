@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: canal-server-svc
+  name: canal-server
   namespace: canal-server
   labels:
     app.kubernetes.io/name: canal-server
