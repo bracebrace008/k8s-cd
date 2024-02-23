@@ -11,9 +11,6 @@ spec:
     path: cert-manager
     repoURL: "https://github.com/bracebrace008/k8s-cd"
     targetRevision: main
-    helm:
-      valueFiles:
-        - values.yaml
   sources: []
   project: default
   syncPolicy:
