@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: canal-server-svc
+  namespace: canal-server
+  labels:
+    app.kubernetes.io/name: canal-server
+spec:
+  ports:
+    - port: 11111
+      targetPort: 11111
+  selector:
+    app.kubernetes.io/name: canal-server
