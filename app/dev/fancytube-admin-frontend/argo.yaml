@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: fancytube-admin-frontend
+spec:
+  destination:
+    name: ''
+    namespace: fancytube-dev
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: app/dev/fancytube-admin-frontend
+    repoURL: 'https://github.com/bracebrace008/k8s-cd'
+    targetRevision: main
+    helm:
+      valueFiles:
+        - values.yaml
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false

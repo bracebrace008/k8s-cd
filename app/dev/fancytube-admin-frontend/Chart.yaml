@@ -1,0 +1,15 @@
+apiVersion: v2
+name: applications
+description: Applications
+
+type: application
+
+version: 0.1.0
+
+appVersion: "1.0"
+
+dependencies:
+  - name: common-chart
+    version: 0.1.0
+    # repository: https://bracebrace008.github.io/k8s-cd/app/common-chart/
+    repository: file://../../common-chart
