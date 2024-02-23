@@ -4,12 +4,12 @@ metadata:
   name: fancytube-h5-frontend
 spec:
   destination:
-    name: ''
+    name: ""
     namespace: fancytube-dev
-    server: 'https://kubernetes.default.svc'
+    server: "https://kubernetes.default.svc"
   source:
     path: app/dev/fancytube-h5-frontend
-    repoURL: 'https://github.com/bracebrace008/k8s-cd'
+    repoURL: "https://github.com/bracebrace008/k8s-cd"
     targetRevision: main
     helm:
       valueFiles:
