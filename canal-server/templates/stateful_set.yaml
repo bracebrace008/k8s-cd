@@ -1,0 +1,39 @@
+kind: StatefulSet
+apiVersion: apps/v1
+metadata:
+  name: canal-server
+  namespace: devops
+  labels:
+    app.kubernetes.io/name: canal-server
+spec:
+  revisionHistoryLimit: 3
+  replicas: 2
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: canal-server
+  template:
+    metadata:
+      name: canal-server
+      labels:
+        app.kubernetes.io/name: canal-server
+    spec:
+      containers:
+        - name: canal-server
+          image: "canal/canal-server:latest"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: tcp
+              containerPort: 11111
+              protocol: TCP
+          env:
+            - name: canal.instance.master.address
+              value: {{ .Values.mysqlAddress }}
+            - name: canal.instance.dbUsername
+              value: {{ .Values.dbUsername }}
+            - name: canal.instance.dbPassword
+              value: {{ .Values.dbPassword }}    
+          resources:
+            requests:
+              cpu: 250m
+              memory: 512Mi
+  serviceName: canal-server

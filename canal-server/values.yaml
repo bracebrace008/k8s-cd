@@ -1,0 +1,3 @@
+mysqlAddress: mysql-innerdbcluster.mysql-innerdbcluster:3306
+dbUsername: root
+dbPassword: a123456789
