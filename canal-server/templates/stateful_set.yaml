@@ -2,7 +2,7 @@ kind: StatefulSet
 apiVersion: apps/v1
 metadata:
   name: canal-server
-  namespace: devops
+  namespace: canal-server
   labels:
     app.kubernetes.io/name: canal-server
 spec:
