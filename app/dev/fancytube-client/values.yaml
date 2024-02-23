@@ -1,0 +1,4 @@
+appName: fancytube-client
+namespace: fancytube-dev
+appPort: 8208
+tag: "2024-02-23-07-17-40"
