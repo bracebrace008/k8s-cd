@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nacos
+  name: canal-server
 spec:
   destination:
     name: ''
-    namespace: nacos
+    namespace: canal-server
     server: 'https://kubernetes.default.svc'
   source:
-    path: nacos
+    path: canal-server
     repoURL: 'https://github.com/bracebrace008/k8s-cd'
     targetRevision: main
     helm:
