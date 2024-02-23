@@ -4,11 +4,10 @@ metadata:
   name: {{ .Values.appName }}
   namespace: fancytube-dev
   annotations:
-    kubesphere.io/creator: admin
     cert-manager.io/cluster-issuer: "letsencrypt-dev"
-    acme.cert-manager.io/http01-edit-in-place: "true"
+    # acme.cert-manager.io/http01-edit-in-place: "true"
 spec:
-  # ingressClassName: nginx
+  ingressClassName: nginx
   tls:
   - hosts:
     - fancytube-test.xyz
@@ -21,6 +20,6 @@ spec:
             pathType: ImplementationSpecific
             backend:
               service:
-                name: {{ .Values.appName }}
+                name: {{ .Values.appName }}-svc
                 port:
                   number: 3000
