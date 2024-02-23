@@ -4,6 +4,7 @@ metadata:
   name: {{ .Values.appName }}
   namespace: fancytube-dev
   annotations:
+    kubesphere.io/creator: admin
     cert-manager.io/cluster-issuer: "letsencrypt-dev"
     acme.cert-manager.io/http01-edit-in-place: "true"
 spec:
