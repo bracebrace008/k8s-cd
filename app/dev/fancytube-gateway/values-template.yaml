@@ -1,0 +1,4 @@
+appName: fancytube-gateway
+namespace: fancytube-dev
+appPort: 8209
+tag: "${TAG}"

@@ -1,0 +1,4 @@
+appName: fancytube-h5-frontend
+namespace: fancytube-dev-frontend
+appPort: 3000
+tag: "${TAG}"
