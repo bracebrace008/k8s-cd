@@ -1,4 +1,4 @@
 appName: fancytube-admin-frontend
-namespace: fancytube-dev
-appPort: 80
-tag: 2024-02-19-29-59
+namespace: fancytube-dev-frontend
+appPort: 8080
+tag: "2024-02-26-01-55-05"
