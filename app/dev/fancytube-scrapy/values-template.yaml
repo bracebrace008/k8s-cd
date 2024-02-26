@@ -1,0 +1,4 @@
+appName: fancytube-scrapy
+namespace: fancytube-dev
+appPort: 6800
+tag: "${TAG}"
