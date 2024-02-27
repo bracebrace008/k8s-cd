@@ -1,0 +1,26 @@
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: {{ .Values.appName }}
+  namespace: fancytube-dev
+  annotations:
+    kubesphere.io/creator: admin
+    cert-manager.io/cluster-issuer: "letsencrypt-dev"
+    acme.cert-manager.io/http01-edit-in-place: "true"
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - admin.fancytube-test.xyz
+    secretName: {{ .Values.appName }}-tls
+  rules:
+    - host: admin.fancytube-test.xyz
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: {{ .Values.appName }}-svc
+                port:
+                  number: 80
