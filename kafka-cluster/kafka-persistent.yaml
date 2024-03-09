@@ -27,15 +27,17 @@ spec:
       type: jbod
       volumes:
       - id: 0
-        type: openebs-hostpath
-        size: 50Gi
+        type: persistent-claim
+        size: 20Gi
         deleteClaim: false
+        class: openebs-hostpath
   zookeeper:
     replicas: 2
     storage:
-      type: openebs-hostpath
-      size: 50Gi
+      type: persistent-claim
+      size: 20Gi
       deleteClaim: false
+      class: openebs-hostpath
   entityOperator:
     topicOperator: {}
     userOperator: {}
