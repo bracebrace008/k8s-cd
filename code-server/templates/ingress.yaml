@@ -1,63 +1,26 @@
-{{- if .Values.ingress.enabled -}}
-{{- $fullName := include "code-server.fullname" . -}}
-{{- $svcPort := .Values.service.port -}}
-{{- if semverCompare ">=1.19-0" $.Capabilities.KubeVersion.GitVersion -}}
-apiVersion: networking.k8s.io/v1
-{{- else if semverCompare ">=1.14-0" .Capabilities.KubeVersion.GitVersion -}}
-apiVersion: networking.k8s.io/v1beta1
-{{- else -}}
-apiVersion: extensions/v1beta1
-{{- end }}
 kind: Ingress
+apiVersion: networking.k8s.io/v1
 metadata:
-  name: {{ $fullName }}
-  labels:
-    {{- include "code-server.labels" . | nindent 4 }}
-  {{- with .Values.ingress.annotations }}
+  name: code-server
+  namespace: fancytube-dev
   annotations:
-    {{- toYaml . | nindent 4 }}
-  {{- end }}
+    kubesphere.io/creator: admin
+    cert-manager.io/cluster-issuer: "letsencrypt-dev"
+    acme.cert-manager.io/http01-edit-in-place: "true"
 spec:
-  {{- if .Values.ingress.ingressClassName }}
-  ingressClassName: {{ .Values.ingress.ingressClassName }}
-  {{- end }}
-  {{- if .Values.ingress.tls }}
+  ingressClassName: nginx
   tls:
-    {{- range .Values.ingress.tls }}
-    - hosts:
-        {{- range .hosts }}
-        - {{ . | quote }}
-        {{- end }}
-      secretName: {{ .secretName }}
-    {{- end }}
-  {{- end }}
+  - hosts:
+    - vscode.fancytube-test.xyz
+    secretName: code-server-tls
   rules:
-  {{- if semverCompare ">=1.19-0" $.Capabilities.KubeVersion.GitVersion -}}
-    {{- range .Values.ingress.hosts }}
-    - host: {{ .host | quote }}
+    - host: admin.fancytube-test.xyz
       http:
         paths:
-          {{- range .paths }}
-          - path: {{ . }}
-            pathType: Prefix
+          - path: /
+            pathType: ImplementationSpecific
             backend:
               service:
-                name: {{ $fullName }}
-                port: 
-                  number: {{ $svcPort }}
-          {{- end }}
-    {{- end }}
-  {{- else -}}
-    {{- range .Values.ingress.hosts }}
-    - host: {{ .host | quote }}
-      http:
-        paths:
-          {{- range .paths }}
-          - path: {{ . }}
-            backend:
-              serviceName: {{ $fullName }}
-              servicePort: {{ $svcPort }}
-          {{- end }}
-    {{- end }}
-  {{- end }}
-{{- end }}
+                name: code-server
+                port:
+                  number: 80
