@@ -14,7 +14,7 @@ spec:
     - vscode.fancytube-test.xyz
     secretName: code-server-tls
   rules:
-    - host: admin.fancytube-test.xyz
+    - host: vscode.fancytube-test.xyz
       http:
         paths:
           - path: /
