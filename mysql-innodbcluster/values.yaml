@@ -123,7 +123,7 @@ baseServerId: 1000
 serverConfig:
  mycnf: |
    [mysqld]
-   expire_logs_days = 7
+   binlog_expire_logs_seconds = 604800
 
 datadirVolumeClaimTemplate:
   storageClassName: openebs-hostpath
