@@ -120,11 +120,10 @@ baseServerId: 1000
 #podAnnotations:
 #podLabels:
 
-#serverConfig:
-#  mycnf: |
-#    [mysqld]
-#    core_file
-#    local_infile=off
+serverConfig:
+ mycnf: |
+   [mysqld]
+   expire_logs_days = 7
 
 datadirVolumeClaimTemplate:
   storageClassName: openebs-hostpath
