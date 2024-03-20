@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: minio-tenant
+spec:
+  destination:
+    name: ''
+    namespace: minio
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: minio-tenant
+    repoURL: 'https://github.com/bracebrace008/k8s-cd'
+    targetRevision: main
+    helm:
+      valueFiles:
+        - values.yaml
+  sources: []
+  project: default
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
