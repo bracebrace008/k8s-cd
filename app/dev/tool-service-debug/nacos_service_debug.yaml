@@ -11,16 +11,8 @@ spec:
       protocol: TCP
       targetPort: 8848
       nodePort: 30848
-    - name: rpc
-      port: 7848
-      protocol: TCP
-      targetPort: 7848
-    - name: new-rpc
-      port: 9848
-      protocol: TCP
-      targetPort: 9848
   selector:
     app: nacos
-    app.kubernetes.io/instance: nacos
+    app.kubernetes.io/instance: nacos 
     component: nacos
     middleware: nacos
