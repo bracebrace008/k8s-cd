@@ -7,7 +7,7 @@ spec:
   type: NodePort
   ports:
     - port: 3306
-    - targetPort: 33060
+    - targetPort: 32000
   selector:
     component: mysqlrouter
     mysql.oracle.com/cluster: mysql-innerdbcluster
