@@ -49,7 +49,6 @@ controller:
   config: 
     use-forwarded-headers: "true"
     enable-real-ip: "true"
-    use-proxy-protocol: "true"
   # -- Annotations to be added to the controller config configuration configmap.
   configAnnotations: {}
   # -- Will add custom headers before sending traffic to backends according to https://github.com/kubernetes/ingress-nginx/tree/main/docs/examples/customization/custom-headers
