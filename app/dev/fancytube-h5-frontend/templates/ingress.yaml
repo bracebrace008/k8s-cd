@@ -12,6 +12,7 @@ spec:
   tls:
   - hosts:
     - fancytube-test.xyz
+    - fancytube.io
     secretName: {{ .Values.appName }}-tls
   rules:
     - host: fancytube-test.xyz
@@ -24,3 +25,13 @@ spec:
                 name: {{ .Values.appName }}-svc
                 port:
                   number: 3000
+    - host: fancytube.io
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: {{ .Values.appName }}-svc
+                port:
+                  number: 3000              
