@@ -1,4 +1,10 @@
 appName: fancytube-data
 namespace: fancytube-dev
 appPort: 8206
+
+resources:
+  limits:
+    memory: "500Mi"
+    cpu: "1000m"
+
 tag: "2024-03-30-06-33-35"
