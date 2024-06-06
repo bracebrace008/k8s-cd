@@ -1,4 +1,10 @@
 appName: fancytube-search
 namespace: fancytube-dev
 appPort: 8202
+
+resources:
+  limits:
+    memory: "500Mi"
+    cpu: "500m"
+
 tag: "${TAG}"

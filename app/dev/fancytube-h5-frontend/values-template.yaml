@@ -1,4 +1,10 @@
 appName: fancytube-h5-frontend
 namespace: fancytube-dev
 appPort: 3000
+
+resources:
+  limits:
+    memory: "500Mi"
+    cpu: "500m"
+
 tag: "${TAG}"

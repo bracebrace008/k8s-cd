@@ -16,13 +16,13 @@ spec:
       labels:
         app: "{{ .Values.appName }}"
     spec:
-      tolerations:
-        - key: pool-prod
-          operator: Exists
-          effect: NoSchedule
       containers:
         - name: "{{ .Values.appName }}"
           image: "bracebrace008/{{ .Values.appName }}:{{ .Values.tag }}"
           ports:
             - containerPort: {{ .Values.appPort }}
+          resources:
+            limits:
+              memory: "{{ .Values.resources.limits.memory }}"
+              cpu: "{{ .Values.resources.limits.cpu }}" 
 {{- end -}}

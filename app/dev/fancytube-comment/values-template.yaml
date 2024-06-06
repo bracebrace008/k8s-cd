@@ -1,4 +1,0 @@
-appName: fancytube-comment
-namespace: fancytube-dev
-appPort: 8203
-tag: "${TAG}"

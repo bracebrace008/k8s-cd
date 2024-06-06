@@ -1,4 +1,10 @@
 appName: fancytube-admin-frontend
 namespace: fancytube-dev
 appPort: 80
+
+resources:
+  limits:
+    memory: "512Mi"
+    cpu: "260m"
+
 tag: "${TAG}"

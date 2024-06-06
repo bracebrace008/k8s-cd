@@ -1,4 +1,10 @@
 appName: fancytube-auth
 namespace: fancytube-dev
 appPort: 8205
+
+resources:
+  limits:
+    memory: "400Mi"
+    cpu: "500m"
+
 tag: "${TAG}"

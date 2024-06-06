@@ -1,3 +1,0 @@
-{{- include "common-chart.deployment" . }}
----
-{{- include "common-chart.service" . }}
