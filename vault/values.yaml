@@ -764,7 +764,7 @@ server:
   # storage when using the file or raft backend storage engines.
   # See https://developer.hashicorp.com/vault/docs/configuration/storage to know more
   dataStorage:
-    enabled: true
+    enabled: false
     # Size of the PVC created
     size: 10Gi
     # Location where the PVC will be mounted.
@@ -847,8 +847,11 @@ server:
         #  unauthenticated_metrics_access = "true"
         #}
       }
-      storage "file" {
-        path = "/vault/data"
+      storage "mysql" {
+        address = "mysql-innerdbcluster.mysql-innerdbcluster:3306"
+        username = "root"
+        password = "a123456789"
+        database = "fancytube"
       }
 
       # Example configuration for using auto-unseal, using Google Cloud KMS. The
