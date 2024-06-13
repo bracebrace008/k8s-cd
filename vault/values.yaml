@@ -357,7 +357,7 @@ injector:
 server:
   # If true, or "-" with global.enabled true, Vault server will be installed.
   # See vault.mode in _helpers.tpl for implementation details.
-  enabled: "-"
+  enabled: true
 
   # [Enterprise Only] This value refers to a Kubernetes secret that you have
   # created that contains your enterprise license. If you are not using an
@@ -824,7 +824,7 @@ server:
   # the "file" backend.  This mode is not highly available and should not be scaled
   # past a single replica.
   standalone:
-    enabled: true
+    enabled: false
 
     # config is a raw string of default configuration when using a Stateful
     # deployment. Default is to use a PersistentVolumeClaim mounted at /vault/data
@@ -876,7 +876,7 @@ server:
   # Helm project by default.  It is possible to manually configure Vault to use a
   # different HA backend.
   ha:
-    enabled: false
+    enabled: true
     replicas: 3
 
     # Set the api_addr configuration for Vault HA
@@ -939,9 +939,11 @@ server:
         address = "[::]:8200"
         cluster_address = "[::]:8201"
       }
-      storage "consul" {
-        path = "vault"
-        address = "HOST_IP:8500"
+      storage "mysql" {
+        address = "mysql-innerdbcluster.mysql-innerdbcluster:3306"
+        username = "root"
+        password = "a123456789"
+        database = "fancytube"
       }
 
       service_registration "kubernetes" {}
