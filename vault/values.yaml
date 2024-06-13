@@ -940,7 +940,7 @@ server:
         cluster_address = "[::]:8201"
       }
       storage "mysql" {
-        address = "tcp(mysql-innerdbcluster.mysql-innerdbcluster.svc.cluster.local:3306)"
+        address = "mysql-innerdbcluster.mysql-innerdbcluster.svc.cluster.local:3306"
         username = "root"
         password = "a123456789"
         database = "fancytube"
