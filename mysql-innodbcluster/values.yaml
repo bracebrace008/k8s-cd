@@ -17,8 +17,8 @@ tls:
 #  routerCertAndPKsecretName: # our use router.certAndPKsecretName
 
 #serverVersion: 8.0.31
-serverInstances: 2
-routerInstances: 1 # or use router.instances
+serverInstances: 0
+routerInstances: 0 # or use router.instances
 baseServerId: 1000
 
 #router:
