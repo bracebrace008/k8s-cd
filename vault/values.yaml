@@ -18,7 +18,7 @@ global:
   #   - name: image-pull-secret
 
   # TLS for end-to-end encrypted transport
-  tlsDisable: false
+  tlsDisable: true
 
   # External vault server address for the injector and CSI provider to use.
   # Setting this will disable deployment of a vault server.
@@ -946,6 +946,8 @@ server:
         database = "fancytube"
         ha_enabled = "true"
       }
+
+      api_addr = "http://127.0.0.1:8200"
 
       service_registration "kubernetes" {}
 
