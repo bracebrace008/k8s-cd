@@ -19,6 +19,12 @@ spec:
       containers:
         - name: "{{ .Values.appName }}"
           image: "bracebrace008/{{ .Values.appName }}:{{ .Values.tag }}"
+          env:
+          - name: POD_IP
+            valueFrom:
+              fieldRef:
+                fieldPath: status.podIP
+          command: ["sh", "-c", "echo My Pod IP is $POD_IP && sleep 3600"]
           ports:
             - containerPort: {{ .Values.appPort }}
           resources:
