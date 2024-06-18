@@ -24,6 +24,11 @@ spec:
             valueFrom:
               fieldRef:
                 fieldPath: status.podIP
+          - name: VAULT_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: vault-token-secret
+                key: token      
           ports:
             - containerPort: {{ .Values.appPort }}
           resources:
