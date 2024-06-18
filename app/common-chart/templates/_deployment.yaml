@@ -24,7 +24,6 @@ spec:
             valueFrom:
               fieldRef:
                 fieldPath: status.podIP
-          command: ["sh", "-c", "echo My Pod IP is $POD_IP && sleep 3600"]
           ports:
             - containerPort: {{ .Values.appPort }}
           resources:
